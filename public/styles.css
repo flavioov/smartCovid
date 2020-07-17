@@ -1,0 +1,58 @@
+@import "https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap";
+
+:root {
+    --covid-color: brown
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+body {
+    background-color: var(--covid-color);
+    font-family: "Roboto Light", monospace;
+}
+
+header {
+    background-color: white;
+    width: 100%;
+    padding: 32px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.header_links {
+    font-size: 22px;
+}
+
+.header_links a + a {
+    margin-left: 32px;
+}
+
+.header_links a {
+    text-decoration: none;
+    color: #777;
+    position: relative;
+}
+
+.header_links a.active {
+    font-weight: bold;
+    color: var(--covid-color );
+}
+
+.header_links a:hover {
+    color: var(--covid-color);
+}
+
+.header_links a:hover::after {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: var(--covid-color);
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    transition: all;
+}
