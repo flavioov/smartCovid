@@ -1,2 +1,2 @@
 # smartCovid
-Projeto: Sistema de de gerenciamento de uma academia
+Projeto: Sistema de gerenciamento de uma academia
