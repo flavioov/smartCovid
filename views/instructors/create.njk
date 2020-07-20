@@ -1,0 +1,44 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+    <title>Gym manager</title>
+{% endblock %}
+
+{% block content %}
+    {# O método 'POST' é melhor para pegar dados via formulário #}
+    <form class="card" method="POST" action="/instructors">
+        <section
+                class="avatar"
+                style="width: 400px; height: 400px; margin: auto; background: url(https://yfh3na.sn.files.1drv.com/y4mABVc_7AP58mhPRmnkE4dCxhEM_4Budok-aJ2RbeC6N7KEDajI-MmDkA3wW8J2YU-IhTADtkbftEnNqdcDLnPHgej2_bqdJV-AuLKMDSfl-PObDggVGrsfdDt7u2SMEpZ606eHWgxJW9wH5ICJp6uFjDnc75QJJS7f8iF7GIqiG4bQCQBkx5q9R6DLPunoX1TsexVXRVDMx9nBCk17LhdBg?width=474&height=266&cropmode=none) no-repeat center center / cover"></section>
+        <section class="details">
+            <h3>Detalhes</h3>
+            <div class="item">
+                <div>Nome</div>
+                <div>Covid</div>
+            </div>
+
+            <div class="item">
+                <div>Idade</div>
+                <div>19</div>
+            </div>
+
+            <div class="item">
+                <div>Sexualidade</div>
+                <div>Pansexual</div>
+            </div>
+
+            <div class="item">
+                <div>Acompanhamento</div>
+                <div>
+                    <span>Aeróbico</span>
+                    <span>Natação</span>
+                </div>
+            </div>
+            <div class="item">
+                <div>Desde</div>
+                <div>S.A.R.S<div>
+                    </div>
+        </section>
+    </form>
+
+{% endblock content %}

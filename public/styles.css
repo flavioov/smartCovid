@@ -1,7 +1,8 @@
 @import "https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap";
 
 :root {
-    --covid-color: brown
+    --covid-color: brown;
+    --second-color: #F7DF1D
 }
 
 * {
@@ -24,7 +25,7 @@ header {
 }
 
 .header_links {
-    font-size: 22px;
+    font-size: 24px;
 }
 
 .header_links a + a {
@@ -37,8 +38,9 @@ header {
     position: relative;
 }
 
+
 .header_links a.active {
-    font-weight: bold;
+    font-weight: bolder;
     color: var(--covid-color );
 }
 
@@ -46,13 +48,129 @@ header {
     color: var(--covid-color);
 }
 
-.header_links a:hover::after {
+/* animação cor link */
+.header_links a::after {
     content: "";
-    width: 100%;
+    width: 0;
     height: 2px;
     background-color: var(--covid-color);
     position: absolute;
     left: 0;
     bottom: -4px;
-    transition: all;
 }
+/*animação sublinhado*/
+.header_links a:hover::after {
+    width: 100%;
+    transition: width 300ms ease-in;
+}
+
+/* == CARD == */
+
+.card {
+    background-color: white;
+    width: 1000px;
+    min-height: 600px;
+    margin: 45px auto;
+
+    /*grid*/
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    /*sombra*/
+    box-shadow: 10px 10px 10px -10px rgba(0, 0, 0, 1);
+
+    /*  animation */
+    opacity: 0;
+
+    animation: up 700ms ease-out 300ms running normal;
+
+    /*
+    animation-name: up;
+    animation-duration: 700ms;
+    animation-timing-function: ease-out;
+    animation-delay: 100ms;
+    animation-play-state: running;
+    animation-direction: normal;
+*/
+    /* finishes animation at 'to'*/
+    /* backwards finishes animation at 'from'*/
+    animation-fill-mode: forwards;
+
+}
+
+/* animation */
+@keyframes up {
+    /* 0% */
+    from{
+        transform: translateY(50px);
+    }
+
+    /* 100% */
+    to{
+        opacity: 1;
+    }
+}
+
+.details {
+    padding: 32px 24px;
+}
+
+.details h3 {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--covid-color);
+}
+
+.details .item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 24px 0;
+}
+
+/* representa o ultimo elemento de classe item */
+.details .item:last-child {
+    border: none;
+}
+
+/* seleciona a primeira div e cada uma das classes item */
+.details .item div:nth-child(1) {
+    font-size: 24px;
+    line-height: 32px;
+    color: #777;
+    letter-spacing: 1px;
+    font-weight: normal;
+}
+
+.details .item div:nth-child(2) {
+    color: #555;
+    font-weight: bold;
+    font-size: 28px;
+}
+
+.details .item div:nth-child(2) span {
+    padding: 8px 16px;
+    background-color: var(--second-color);
+    border-radius: 16px;
+    color: #777;
+    margin-right: 4px;
+    margin-top: 8px;
+
+    /* respeita o inline e o margin top*/
+    display: inline-block;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.details .item div:nth-child(2) input {
+    font-size: 16px;
+}
+
+button {
+    padding: 8px 16px;
+    background-color: var(--second-color);
+    border-radius: 16px;
+    color: #777;
+    margin-right: 4px;
+    margin-top: 24px;
+}
+
